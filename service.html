@@ -15,6 +15,8 @@
     .reveal-left.visible{opacity:1;transform:translateX(0)}
     .reveal-right{opacity:0;transform:translateX(40px);transition:opacity .7s ease,transform .7s ease}
     .reveal-right.visible{opacity:1;transform:translateX(0)}
+
+    /* NAV */
     nav{position:sticky;top:0;z-index:100;background:var(--navy);display:flex;align-items:center;padding:0 48px;height:68px;box-shadow:0 2px 20px rgba(0,0,0,.3)}
     .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
     .logo-blocks{display:flex;gap:3px}
@@ -29,32 +31,38 @@
     .lang-toggle{display:flex;margin-left:36px;border:1.5px solid var(--orange);border-radius:20px;overflow:hidden}
     .lang-toggle button{background:none;border:none;color:var(--white);font-size:12px;font-weight:600;padding:5px 14px;cursor:pointer;font-family:inherit;transition:background .2s}
     .lang-toggle button.active{background:var(--orange)}
+
+    /* PAGE BANNER */
     .page-banner{position:relative;min-height:300px;display:flex;align-items:center;overflow:hidden}
-    .page-banner-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1590664863885-9a15f81ac89e?w=1600&q=80') center/cover no-repeat}
+    .page-banner-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600&q=80') center/cover no-repeat}
     .page-banner-bg::after{content:'';position:absolute;inset:0;background:rgba(10,31,68,.82)}
     .page-banner-content{position:relative;z-index:2;padding:64px 48px}
     .page-banner-content h1{font-size:48px;font-weight:900;color:var(--white)}
     .page-banner-content p{color:#A8B4CC;font-size:16px;margin-top:12px}
     .page-banner-strip{height:6px;background:var(--orange)}
+
+    /* SECTION HEADER */
     .section-header{text-align:center;margin-bottom:48px}
     .section-header .accent{display:inline-block;width:48px;height:4px;background:var(--orange);border-radius:2px;margin-bottom:16px}
     .section-header h2{font-size:34px;font-weight:800;margin-bottom:12px}
     .section-header p{color:var(--dgrey);font-size:15px;max-width:520px;margin:0 auto;line-height:1.7}
+
+    /* SERVICE BLOCKS — using bg class instead of nth-child */
     .service-block{padding:80px 48px}
-    .service-block:nth-child(even){background:var(--white)}
-    .service-block:nth-child(odd){background:var(--lgrey)}
+    .service-block.bg-white{background:var(--white)}
+    .service-block.bg-grey{background:var(--lgrey)}
     .service-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
     .service-layout.reverse .service-img-wrap{order:2}
     .service-layout.reverse .service-content{order:1}
-    .service-img-wrap{border-radius:16px;overflow:hidden;height:340px;position:relative}
-    .service-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-    .service-img-wrap:hover img{transform:scale(1.03)}
+    .service-img-wrap{border-radius:16px;overflow:hidden;height:360px;position:relative}
+    .service-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .service-img-wrap:hover img{transform:scale(1.04)}
     .service-img-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:var(--orange);z-index:1}
     .service-tag{display:inline-block;background:var(--orange);color:var(--white);font-size:11px;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:16px;letter-spacing:.06em;text-transform:uppercase}
     .service-content h2{font-size:28px;font-weight:800;margin-bottom:16px}
-    .service-content p{color:var(--dgrey);font-size:15px;line-height:1.8;margin-bottom:24px}
+    .service-content>p{color:var(--dgrey);font-size:15px;line-height:1.8;margin-bottom:24px}
     .service-list{list-style:none;margin-bottom:28px}
-    .service-list li{display:flex;align-items:center;gap:12px;color:var(--dgrey);font-size:14px;padding:8px 0;border-bottom:1px solid var(--mgrey)}
+    .service-list li{display:flex;align-items:center;gap:12px;color:var(--dgrey);font-size:14px;padding:9px 0;border-bottom:1px solid var(--mgrey)}
     .service-list li:last-child{border-bottom:none}
     .service-list li::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--orange);flex-shrink:0}
     .btn-primary{background:var(--orange);color:var(--white);border:none;padding:13px 28px;border-radius:50px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;text-decoration:none;display:inline-block}
@@ -69,9 +77,7 @@
     .gallery-item.tall{grid-row:span 2}
     .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
     .gallery-item:hover img{transform:scale(1.06)}
-    .gallery-item::after{content:'';position:absolute;inset:0;background:rgba(10,31,68,0);transition:background .3s}
-    .gallery-item:hover::after{background:rgba(10,31,68,.35)}
-    .gallery-overlay{position:absolute;bottom:0;left:0;right:0;padding:16px;color:var(--white);font-size:13px;font-weight:600;background:linear-gradient(0deg,rgba(0,0,0,.7),transparent);transform:translateY(100%);transition:transform .3s;z-index:2}
+    .gallery-overlay{position:absolute;bottom:0;left:0;right:0;padding:16px;color:var(--white);font-size:13px;font-weight:600;background:linear-gradient(0deg,rgba(0,0,0,.75),transparent);transform:translateY(100%);transition:transform .3s;z-index:2}
     .gallery-item:hover .gallery-overlay{transform:translateY(0)}
 
     /* PROCESS */
@@ -84,11 +90,14 @@
     .process-step h4{font-size:13px;font-weight:700;margin-bottom:6px}
     .process-step p{color:var(--dgrey);font-size:12px;line-height:1.5}
 
+    /* CTA */
     .cta-banner{background:var(--orange);padding:60px 48px;text-align:center}
     .cta-banner h2{font-size:34px;font-weight:900;color:var(--white);margin-bottom:12px}
     .cta-banner p{color:rgba(255,255,255,.85);font-size:16px;margin-bottom:32px}
     .btn-white{background:var(--white);color:var(--orange);border:none;padding:14px 36px;border-radius:50px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;text-decoration:none;display:inline-block}
     .btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+
+    /* FOOTER */
     footer{background:#060F22;padding:40px 48px 24px}
     .footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:32px;flex-wrap:wrap;gap:24px}
     .footer-brand strong{color:var(--white);font-size:20px;display:block;margin-bottom:6px}
@@ -101,6 +110,8 @@
     .social-dots{display:flex;gap:10px}
     .social-dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;cursor:pointer;font-weight:700;transition:transform .2s}
     .social-dot:hover{transform:scale(1.15)}
+
+    /* WHATSAPP */
     .whatsapp-btn{position:fixed;bottom:32px;right:32px;z-index:999;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);text-decoration:none;transition:all .3s;animation:pulse 2s infinite}
     .whatsapp-btn:hover{transform:scale(1.1)}
     .whatsapp-btn svg{width:32px;height:32px;fill:white}
@@ -108,6 +119,7 @@
   </style>
 </head>
 <body>
+
 <nav>
   <a href="index.html" class="logo">
     <div class="logo-blocks"><span></span><span></span></div>
@@ -134,14 +146,17 @@
 </div>
 <div class="page-banner-strip"></div>
 
-<!-- SERVICE 1 -->
-<section class="service-block">
+<!-- SERVICE 1 — BUILDING CONSTRUCTION -->
+<section class="service-block bg-white">
   <div class="service-layout">
-    <div class="service-img-wrap reveal-left"><img src="https://images.unsplash.com/photo-1590664863885-9a15f81ac89e?w=800&q=80" alt="Building construction Africa" loading="lazy"/></div>
+    <div class="service-img-wrap reveal-left">
+      <!-- Kigali/Rwanda building construction with African workers -->
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Building construction Rwanda" loading="lazy"/>
+    </div>
     <div class="service-content reveal-right">
       <span class="service-tag" data-en="Service 01" data-fr="Service 01">Service 01</span>
       <h2 data-en="Building Construction" data-fr="Construction de Bâtiments">Building Construction</h2>
-      <p data-en="We design and construct residential and commercial buildings that combine structural integrity with aesthetic excellence. From concept to final finish, our team manages every phase of your construction project." data-fr="Nous concevons et construisons des bâtiments résidentiels et commerciaux qui allient intégrité structurelle et excellence esthétique. Du concept à la finition finale, notre équipe gère chaque phase.">We design and construct residential and commercial buildings that combine structural integrity with aesthetic excellence. From concept to final finish, our team manages every phase.</p>
+      <p data-en="We design and construct residential and commercial buildings that combine structural integrity with aesthetic excellence. From concept to final finish, our team manages every phase of your project." data-fr="Nous concevons et construisons des bâtiments résidentiels et commerciaux alliant intégrité structurelle et excellence esthétique. Du concept à la finition finale, notre équipe gère chaque phase.">We design and construct residential and commercial buildings that combine structural integrity with aesthetic excellence. From concept to final finish, our team manages every phase of your project.</p>
       <ul class="service-list">
         <li data-en="Residential homes and villas" data-fr="Maisons résidentielles et villas">Residential homes and villas</li>
         <li data-en="Commercial and office buildings" data-fr="Bâtiments commerciaux et bureaux">Commercial and office buildings</li>
@@ -154,14 +169,17 @@
   </div>
 </section>
 
-<!-- SERVICE 2 -->
-<section class="service-block">
+<!-- SERVICE 2 — ROAD CONSTRUCTION -->
+<section class="service-block bg-grey">
   <div class="service-layout reverse">
-    <div class="service-img-wrap reveal-right"><img src="https://images.unsplash.com/photo-1573155993874-d5d48af862ba?w=800&q=80" alt="Road construction Africa" loading="lazy"/></div>
+    <div class="service-img-wrap reveal-right">
+      <!-- Road construction in Rwanda/Africa — actual tarmac laying -->
+      <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80" alt="Road construction Rwanda" loading="lazy"/>
+    </div>
     <div class="service-content reveal-left">
       <span class="service-tag" data-en="Service 02" data-fr="Service 02">Service 02</span>
       <h2 data-en="Road Construction" data-fr="Construction Routière">Road Construction</h2>
-      <p data-en="Our road construction team delivers durable, safe, and well-engineered road infrastructure across Rwanda — connecting communities and supporting economic growth in both urban and rural areas." data-fr="Notre équipe de construction routière réalise une infrastructure routière durable et sécurisée au Rwanda — reliant les communautés et soutenant la croissance économique.">Our road construction team delivers durable, safe, and well-engineered road infrastructure across Rwanda — connecting communities and supporting economic growth.</p>
+      <p data-en="Our road construction team delivers durable, safe, and well-engineered road infrastructure across Rwanda — connecting communities and supporting economic growth in urban and rural areas." data-fr="Notre équipe réalise une infrastructure routière durable et sécurisée au Rwanda — reliant les communautés et soutenant la croissance économique en zones urbaines et rurales.">Our road construction team delivers durable, safe, and well-engineered road infrastructure across Rwanda — connecting communities and supporting economic growth in urban and rural areas.</p>
       <ul class="service-list">
         <li data-en="Urban road development" data-fr="Développement de routes urbaines">Urban road development</li>
         <li data-en="Rural road infrastructure" data-fr="Infrastructure routière rurale">Rural road infrastructure</li>
@@ -174,14 +192,17 @@
   </div>
 </section>
 
-<!-- SERVICE 3 -->
-<section class="service-block">
+<!-- SERVICE 3 — WELDING -->
+<section class="service-block bg-white">
   <div class="service-layout">
-    <div class="service-img-wrap reveal-left"><img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80" alt="Welding metalwork" loading="lazy"/></div>
+    <div class="service-img-wrap reveal-left">
+      <!-- Welding sparks close up — universal but fits well -->
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Welding and metalwork" loading="lazy"/>
+    </div>
     <div class="service-content reveal-right">
       <span class="service-tag" data-en="Service 03" data-fr="Service 03">Service 03</span>
       <h2 data-en="Welding & Soldering" data-fr="Soudure & Brasage">Welding & Soldering</h2>
-      <p data-en="Our certified welding team provides precision metalwork and structural welding services for construction, industrial, and commercial applications. We work with a wide range of metals and deliver quality on every job." data-fr="Notre équipe de soudeurs certifiés fournit des services de métallurgie de précision et de soudage structurel pour des applications de construction, industrielles et commerciales.">Our certified welding team provides precision metalwork and structural welding services for construction, industrial, and commercial applications.</p>
+      <p data-en="Our certified welding team provides precision metalwork and structural welding services for construction, industrial, and commercial applications. We work with a wide range of metals and deliver quality on every job." data-fr="Notre équipe de soudeurs certifiés fournit des services de métallurgie de précision et de soudage structurel pour des applications de construction, industrielles et commerciales.">Our certified welding team provides precision metalwork and structural welding services for construction, industrial, and commercial applications. We work with a wide range of metals and deliver quality on every job.</p>
       <ul class="service-list">
         <li data-en="Structural steel fabrication" data-fr="Fabrication d'acier structurel">Structural steel fabrication</li>
         <li data-en="Gate and fence construction" data-fr="Construction de portails et clôtures">Gate and fence construction</li>
@@ -194,10 +215,13 @@
   </div>
 </section>
 
-<!-- SERVICE 4 -->
-<section class="service-block">
+<!-- SERVICE 4 — FURNISHINGS -->
+<section class="service-block bg-grey">
   <div class="service-layout reverse">
-    <div class="service-img-wrap reveal-right"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80" alt="Furniture furnishings" loading="lazy"/></div>
+    <div class="service-img-wrap reveal-right">
+      <!-- African wooden furniture workshop / carpentry -->
+      <img src="https://images.unsplash.com/photo-1611967164521-abae8fba4668?w=800&q=80" alt="African wooden furniture workshop" loading="lazy"/>
+    </div>
     <div class="service-content reveal-left">
       <span class="service-tag" data-en="Service 04" data-fr="Service 04">Service 04</span>
       <h2 data-en="Furnishings & Interiors" data-fr="Ameublement & Intérieurs">Furnishings & Interiors</h2>
@@ -223,24 +247,24 @@
   </div>
   <div class="gallery-grid reveal">
     <div class="gallery-item tall">
-      <img src="https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=600&q=80" alt="African building project" loading="lazy"/>
+      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&q=80" alt="African construction team at work" loading="lazy"/>
+      <div class="gallery-overlay" data-en="Our Construction Team" data-fr="Notre Équipe de Construction">Our Construction Team</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Building under construction" loading="lazy"/>
       <div class="gallery-overlay" data-en="Building Construction" data-fr="Construction de Bâtiments">Building Construction</div>
     </div>
     <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1573155993874-d5d48af862ba?w=600&q=80" alt="Road construction Rwanda" loading="lazy"/>
-      <div class="gallery-overlay" data-en="Road Infrastructure" data-fr="Infrastructure Routière">Road Infrastructure</div>
-    </div>
-    <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80" alt="Welding workshop" loading="lazy"/>
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Welding metalwork sparks" loading="lazy"/>
       <div class="gallery-overlay" data-en="Precision Welding" data-fr="Soudure de Précision">Precision Welding</div>
     </div>
     <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80" alt="Interior furnishings" loading="lazy"/>
+      <img src="https://images.unsplash.com/photo-1611967164521-abae8fba4668?w=600&q=80" alt="Wooden furniture carpentry" loading="lazy"/>
       <div class="gallery-overlay" data-en="Custom Furnishings" data-fr="Ameublement Sur Mesure">Custom Furnishings</div>
     </div>
     <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&q=80" alt="Construction team Africa" loading="lazy"/>
-      <div class="gallery-overlay" data-en="Our Expert Team" data-fr="Notre Équipe d'Experts">Our Expert Team</div>
+      <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80" alt="Road construction workers" loading="lazy"/>
+      <div class="gallery-overlay" data-en="Road Infrastructure" data-fr="Infrastructure Routière">Road Infrastructure</div>
     </div>
   </div>
 </section>
@@ -285,11 +309,21 @@
 </a>
 
 <script>
-function setLang(lang,btn){document.querySelectorAll('.lang-toggle button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('[data-en]').forEach(el=>{const t=el.getAttribute('data-'+lang);if(t){if(el.tagName==='INPUT'||el.tagName==='TEXTAREA'){el.placeholder=t;}else{el.innerHTML=t;}}});localStorage.setItem('ecosm_lang',lang);}
+function setLang(lang,btn){
+  document.querySelectorAll('.lang-toggle button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    const t=el.getAttribute('data-'+lang);
+    if(t){if(el.tagName==='INPUT'||el.tagName==='TEXTAREA'){el.placeholder=t;}else{el.innerHTML=t;}}
+  });
+  localStorage.setItem('ecosm_lang',lang);
+}
 window.addEventListener('DOMContentLoaded',()=>{
   const saved=localStorage.getItem('ecosm_lang');
   if(saved==='fr'){const btn=document.querySelector('.lang-toggle button:last-child');if(btn)setLang('fr',btn);}
-  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+  },{threshold:0.1});
   document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>obs.observe(el));
 });
 </script>
